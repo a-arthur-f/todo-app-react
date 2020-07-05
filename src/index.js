@@ -42,17 +42,26 @@ function App() {
     const itemsList = items.map(item => (
         <div className='items' key={item.key}>
             <div className='item'>{item.text}</div>
-            <button className='delete' onClick={() => deleteItem(item.key)}>Deletar</button>
+            <button className='delete' onClick={() => deleteItem(item.key)}>
+                <i className="fa fa-trash-o" aria-hidden="true"></i>
+            </button>
         </div>
     ))
 
     return (
         <div className='container'>
-            <div className='input-container'>
-                <input className='input' value={currentItem.text} onChange={handleCahnge}></input>
-                <button className='add' onClick={handleClick}>Adicionar</button>
-            </div>
+            <header>TO-DO APP</header>
+
+            <div className='content-container'>
+                
+        
+                <div className='input-container'>
+                    <input className='input' value={currentItem.text} onChange={handleCahnge}></input>
+                    <button className='add' onClick={handleClick}>ADD</button>
+                </div>
+                    
                 <Items className='items-container' items={itemsList} />
+            </div>
         </div>
     )
 }
