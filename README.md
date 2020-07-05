@@ -1,5 +1,5 @@
 # TODO-APP-REACT
-## App simples de um To-Do List desenvolvido com React
+## Frontend de um To-Do List desenvolvido com React
 
 ---
 
