@@ -40,22 +40,19 @@ function App() {
     }
 
     const itemsList = items.map(item => (
-        <div key={item.key}>
-            {item.text}
-            <button onClick={() => deleteItem(item.key)}>Deletar</button>
+        <div className='items' key={item.key}>
+            <div className='item'>{item.text}</div>
+            <button className='delete' onClick={() => deleteItem(item.key)}>Deletar</button>
         </div>
     ))
 
     return (
         <div className='container'>
-            <div className='container-input'>
+            <div className='input-container'>
                 <input className='input' value={currentItem.text} onChange={handleCahnge}></input>
                 <button className='add' onClick={handleClick}>Adicionar</button>
             </div>
-
-            <div className='items-container'>
-                <Items className='items' items={itemsList} />
-            </div>
+                <Items className='items-container' items={itemsList} />
         </div>
     )
 }
